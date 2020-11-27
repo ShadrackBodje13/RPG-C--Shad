@@ -216,49 +216,43 @@ namespace Rpg
         {
             try
             {
-                
-                using (StreamReader sr = new StreamReader("saveRpgFile.txt"))
+                using (StreamReader sr = new StreamReader(@"C:\Users\bodje\Desktop\saveFile.txt"))
                 {
                     string line;
-                    
+
                     while ((line = sr.ReadLine()) != null)
                     {
                         Console.WriteLine(line);
+                        //--------------------
+                        string info = line;
+                        int found = 0;
+
+                        Console.WriteLine("Les données recuperées sont ");
+                        foreach (string s in info)
+                            Console.WriteLine(s);
+
+                        Console.WriteLine("\nNous voulons récupérer uniquement les informations clés : ");
+                        foreach (string s in info)
+                        {
+                            found = s.IndexOf(": ");
+                            Console.WriteLine("   {0}", s.Substring(found + 2));
+                        }
                     }
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine("Le fichier ne peut etre lu :");
+                Console.WriteLine("Le fichier n'a pas pu être lu.");
                 Console.WriteLine(e.Message);
             }
         }
+    }
 
         public void Ecriture()
         {
             string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);//Environnement Permet de recuperer des raccourcis vers des endroit(ici desktop) de nos machine
 
-            // Get the directories currently on the C drive.
-            DirectoryInfo[] cDirs = new DirectoryInfo(@"c:\").GetDirectories();
-
-            // Write each directory name to a file.
-            using (StreamWriter sw = new StreamWriter("CDriveDirs.txt"))
-            {
-                foreach (DirectoryInfo dir in cDirs)
-                {
-                    sw.WriteLine(dir.Name);
-                }
-            }
-
-            // Read and show each line from the file.
-            string line = "";
-            using (StreamReader sr = new StreamReader("CDriveDirs.txt"))
-            {
-                while ((line = sr.ReadLine()) != null)
-                {
-                    Console.WriteLine(line);
-                }
-            }
+            string[] lines = { "First line", "Second line", "Third line" };
         }
-    }
+    
 }
