@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Personnel\\Ynov_Paris\\Bachelor2\\ArchitectureLogicielle\\Rpg\\Rpg\\Rpg.csproj": {}
+    "D:\\Personnel\\Professionel\\RPG-C--Shad\\Rpg\\Rpg\\Rpg.csproj": {}
   },
   "projects": {
-    "D:\\Personnel\\Ynov_Paris\\Bachelor2\\ArchitectureLogicielle\\Rpg\\Rpg\\Rpg.csproj": {
+    "D:\\Personnel\\Professionel\\RPG-C--Shad\\Rpg\\Rpg\\Rpg.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Personnel\\Ynov_Paris\\Bachelor2\\ArchitectureLogicielle\\Rpg\\Rpg\\Rpg.csproj",
+        "projectUniqueName": "D:\\Personnel\\Professionel\\RPG-C--Shad\\Rpg\\Rpg\\Rpg.csproj",
         "projectName": "Rpg",
-        "projectPath": "D:\\Personnel\\Ynov_Paris\\Bachelor2\\ArchitectureLogicielle\\Rpg\\Rpg\\Rpg.csproj",
+        "projectPath": "D:\\Personnel\\Professionel\\RPG-C--Shad\\Rpg\\Rpg\\Rpg.csproj",
         "packagesPath": "C:\\Users\\bodje\\.nuget\\packages\\",
-        "outputPath": "D:\\Personnel\\Ynov_Paris\\Bachelor2\\ArchitectureLogicielle\\Rpg\\Rpg\\obj\\",
+        "outputPath": "D:\\Personnel\\Professionel\\RPG-C--Shad\\Rpg\\Rpg\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bodje\\AppData\\Roaming\\NuGet\\NuGet.Config",

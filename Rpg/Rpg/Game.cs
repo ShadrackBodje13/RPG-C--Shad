@@ -15,7 +15,7 @@ namespace Rpg
 
         public Game()
         {
-           
+
             GameOpening();
             Console.WriteLine("Entrez le nom que vous voulez donner à votre Hero");
             string HeroesName = Console.ReadLine();
@@ -40,11 +40,11 @@ namespace Rpg
             Player p = hero;
             Monster m = Monstres[CurrentLevel];
 
-            while (p.Hp> 0 && m.Hp>0)
+            while (p.Hp > 0 && m.Hp > 0)
             {
-                Console.WriteLine("Choisissez quelle action doit faire " +hero.Name+ "  : 1:Atk 2:Inventaire 3:Fuir");
+                Console.WriteLine("Choisissez quelle action doit faire " + hero.Name + "  : 1:Atk 2:Inventaire 3:Fuir");
                 int choix = choixMenu(3);
-                switch(choix)//le joueur a le choix entre attaquer, 
+                switch (choix)//le joueur a le choix entre attaquer, 
                 {
                     case 1:
                         Attaque();
@@ -58,7 +58,7 @@ namespace Rpg
                 }
             }
 
-            if (p.Hp>0)
+            if (p.Hp > 0)
             {
                 Console.WriteLine("Bravo");
                 hero.Inventory.Add(m.Loot);
@@ -111,11 +111,11 @@ namespace Rpg
         {
             for (int i = 0; i < hero.Inventory.Count; i++)
             {
-                Console.WriteLine((i+1) +":"+hero.Inventory[i].Name);
+                Console.WriteLine((i + 1) + ":" + hero.Inventory[i].Name);
             }
-            Console.WriteLine((hero.Inventory.Count +1) + ":" + "Return to Battle");
+            Console.WriteLine((hero.Inventory.Count + 1) + ":" + "Return to Battle");
 
-            int choix = choixMenu(hero.Inventory.Count+1);
+            int choix = choixMenu(hero.Inventory.Count + 1);
 
             if ((hero.Inventory.Count + 1) == choix)
                 return;
@@ -131,8 +131,8 @@ namespace Rpg
             Player p = hero;
             Monster m = Monstres[CurrentLevel];
 
-            m.Hp -= Math.Clamp(p.Atk - m.Def,0,100);
-            p.Hp -= Math.Clamp(m.Atk - p.Def,0,100);
+            m.Hp -= Math.Clamp(p.Atk - m.Def, 0, 100);
+            p.Hp -= Math.Clamp(m.Atk - p.Def, 0, 100);
 
             Console.WriteLine(p.Name + " a encore " + p.Hp + " Hp");
             Console.WriteLine(m.Name + " a encore " + m.Hp + " Hp");
@@ -163,11 +163,11 @@ namespace Rpg
         /// <summary>
         /// Cette fonction est comme une introduction à notre Jeu RPG
         /// </summary>
-    
+
         public void GameOpening()
         {
 
-            Console.WriteLine("Bienvenue dans le RPG" );
+            Console.WriteLine("Bienvenue dans le RPG");
             Console.WriteLine("Il s'agit d'un jeu simple d'un joueur qui combat des monstres, s'il meurt, le jeu est fini sinon il continu jusqu'à la victoire finale");
             Console.WriteLine("Voulez vous charger une partie ? o/n");
             string chargePartie = Console.ReadLine();
@@ -176,7 +176,7 @@ namespace Rpg
             {
                 Console.WriteLine("nous recherchons votre partie de chargement");
                 Load();
-            } 
+            }
             else if (chargePartie == "no")//Si l'utilisateur dit non "n" alors on utilise pas sa sauvegarde et on rentre dans la premiere fonction pour le combat
             {
                 Console.WriteLine("Voilà votre Hero qui apparait il se trouve directement face à un monstre ");
@@ -184,11 +184,11 @@ namespace Rpg
             else
             {
                 Console.WriteLine("Vous n'avez pas entré de reponse adequate");
-                
+
             }
-          
-            
-            
+
+
+
         }
 
         public static void Quit()
@@ -207,11 +207,11 @@ namespace Rpg
         {
             //On demmande d'abord si l'utilisateur veut charger une partie => Voir openingGame
             //Si oui alors on lit dans le dossier/fichier de sauvegarde
-           
+            //Lecture();
             //Si pas de fichier de sauvegarde alors on ramene sur la foncion principale du jeu et on fait une nouvelle partie
 
         }
-
+        /*
         public void Lecture(string fileName)
         {
             try
@@ -246,13 +246,16 @@ namespace Rpg
                 Console.WriteLine(e.Message);
             }
         }
-    }
-
+    
+        */
+        /*
         public void Ecriture()
         {
             string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);//Environnement Permet de recuperer des raccourcis vers des endroit(ici desktop) de nos machine
 
             string[] lines = { "First line", "Second line", "Third line" };
+            //Ensuite
         }
-    
+        */
+    }
 }
